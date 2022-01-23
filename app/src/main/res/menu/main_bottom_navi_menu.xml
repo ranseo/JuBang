@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_home"
+        android:icon="@drawable/home"
+        android:enabled="true"
+        android:title="HOME"/>
+
+
+    <item
+        android:id="@+id/action_edit"
+        android:icon="@drawable/edit"
+        android:enabled="true"
+        android:title="EDIT"/>
+
+
+    <item
+        android:id="@+id/action_statis"
+        android:icon="@drawable/statis"
+        android:enabled="true"
+        android:title="STATIS"/>
+
+
+    <item
+        android:id="@+id/action_setting"
+        android:icon="@drawable/settings"
+        android:enabled="true"
+        android:title="SETTING"/>
+
+</menu>

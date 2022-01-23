@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragment.CountFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:theme="@style/Theme.alcohol"
+        android:layout_height="70dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="현재 주량"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="32dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="최대 주량"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="32dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+    <!--알코올 리더보드-->
+    <LinearLayout
+        android:id="@+id/leaderBoard"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="horizontal"
+        android:theme="@style/Theme.currLeaderBoard">
+
+        <!--현재주량 리더보드-->
+        <LinearLayout
+            android:id="@+id/currAlcohol"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/black"
+            android:orientation="vertical">
+
+            <!--현재주량 잔 수 리더보드-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_currCup"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="0" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="잔" />
+            </LinearLayout>
+
+            <!--현재주량 병 수 리더보드-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_currBot"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="0" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="병" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <!--최대주량 리더보드-->
+        <LinearLayout
+            android:id="@+id/maxAlcohol"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/black"
+            android:orientation="vertical">
+            <!--최대주량 잔 수 리더보드-->
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="190dp"
+                android:layout_height="180dp"
+                android:background="@color/white">
+                <EditText
+                    android:id="@+id/et_maxBot"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:background="@null"
+                    android:digits="0123456789"
+                    android:hint="0병"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <!--잔 및 병 추가 또는 감소-->
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:theme="@style/Theme.plusMinus">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/ll_minusCup"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="잔  -"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/ll_plusCup"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="잔  +"
+                    android:layout_weight="1"/>
+
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/ll_minusBot"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="병  -"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/ll_plusBot"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="병  +"
+                    android:layout_weight="1"/>
+        </LinearLayout>
+    </GridLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,134 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 2,
+    "identityHash": "ecd7bbfc42d5157645e1722313d8213a",
+    "entities": [
+      {
+        "tableName": "titletable",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`titleId` INTEGER PRIMARY KEY AUTOINCREMENT, `store` TEXT NOT NULL, `date` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "titleId",
+            "columnName": "titleId",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "store",
+            "columnName": "store",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "date",
+            "columnName": "date",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "titleId"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "liquortable",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`liquorId` INTEGER PRIMARY KEY AUTOINCREMENT, `name` TEXT NOT NULL, `currCup` INTEGER NOT NULL, `currBot` INTEGER NOT NULL, `maxBot` INTEGER NOT NULL, `titleId` INTEGER)",
+        "fields": [
+          {
+            "fieldPath": "liquorId",
+            "columnName": "liquorId",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "currCup",
+            "columnName": "currCup",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "currBot",
+            "columnName": "currBot",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "maxBot",
+            "columnName": "maxBot",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "titleId",
+            "columnName": "titleId",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "liquorId"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "finallist",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`liquor` TEXT NOT NULL, `titleId` INTEGER, `store` TEXT NOT NULL, `date` TEXT NOT NULL, PRIMARY KEY(`liquor`))",
+        "fields": [
+          {
+            "fieldPath": "liquor",
+            "columnName": "liquor",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "title.titleId",
+            "columnName": "titleId",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "title.store",
+            "columnName": "store",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "title.date",
+            "columnName": "date",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "liquor"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'ecd7bbfc42d5157645e1722313d8213a')"
+    ]
+  }
+}

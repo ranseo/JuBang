@@ -1,0 +1,7 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Picker" parent="Theme.JuBang">
+        <item name="android:textColorPrimary">@color/skyBlue</item>
+        <item name="colorControlNormal">@color/skyBlue</item>
+    </style>
+</resources>

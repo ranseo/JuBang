@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/Theme.dialogTheme">
+
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:paddingStart="10dp"
+                android:text="주류명" />
+
+            <EditText
+                android:id="@+id/dialog_fragment_plus_button_editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="술의 이름을 적어주세요."
+                android:paddingStart="12dp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:paddingStart="10dp"
+                android:text="테두리 색 설정"
+                />
+
+
+            <LinearLayout
+                android:id="@+id/dialog_fragment_plus_button_leaderboard"
+                android:layout_width="300dp"
+                android:layout_height="150dp"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:theme="@style/Theme.DialogFragmentPlusButtonLeaderBoard">
+
+                <!--현재주량 리더보드-->
+                <LinearLayout
+                    android:id="@+id/dialog_fragment_plus_button_layout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/black"
+                    android:orientation="vertical">
+                </LinearLayout>
+
+
+                <!--최대주량 리더보드-->
+                <LinearLayout
+                    android:id="@+id/dialog_fragment_plus_button_layout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/black"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_vertical"
+                    >
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="140dp"
+                        android:layout_height="140dp"
+                        android:background="@color/white">
+
+                        <TextView
+                            android:id="@+id/dialog_fragment_plus_button_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="주류"
+                            android:textColor="@color/grey_background"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_marginTop="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="5"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"/>
+
+            <Button
+                android:id="@+id/dialog_fragment_plus_button_cancelButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/transparency"
+                android:text="취소"
+                android:textStyle="bold"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/dialog_fragment_plus_button_checkButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/transparency"
+                android:text="확인"
+                android:textStyle="bold"
+                />
+
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
